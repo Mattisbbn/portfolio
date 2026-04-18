@@ -1,3 +1,7 @@
+---
+import InteractiveGrid from '../components/InteractiveGrid.vue';
+import '../assets/css/main.css';
+---
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -8,6 +12,7 @@
 		<title>Mattis Babin | Développeur Concepteur</title>
 	</head>
 	<body>
+			<InteractiveGrid client:load />
 		<slot />
 	</body>
 </html>

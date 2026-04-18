@@ -6,20 +6,19 @@
 </template>
 
 <script setup>
-
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from "vue";
 
 const gridRef = ref(null);
 
 const onMouseMove = (e) => {
   if (gridRef.value) {
-    gridRef.value.style.setProperty('--x', `${e.clientX}px`);
-    gridRef.value.style.setProperty('--y', `${e.clientY}px`);
+    gridRef.value.style.setProperty("--x", `${e.clientX}px`);
+    gridRef.value.style.setProperty("--y", `${e.clientY}px`);
   }
 };
 
-onMounted(() => window.addEventListener('mousemove', onMouseMove));
-onUnmounted(() => window.removeEventListener('mousemove', onMouseMove));
+onMounted(() => window.addEventListener("mousemove", onMouseMove));
+onUnmounted(() => window.removeEventListener("mousemove", onMouseMove));
 </script>
 
 <style scoped>
@@ -48,7 +47,15 @@ onUnmounted(() => window.removeEventListener('mousemove', onMouseMove));
     linear-gradient(to right, rgba(0, 0, 0, 0.25) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 1px, transparent 1px);
 
-  -webkit-mask-image: radial-gradient(250px circle at var(--x, -100px) var(--y, -100px), black, transparent);
-  mask-image: radial-gradient(250px circle at var(--x, -100px) var(--y, -100px), black, transparent);
+  -webkit-mask-image: radial-gradient(
+    250px circle at var(--x, -100px) var(--y, -100px),
+    black,
+    transparent
+  );
+  mask-image: radial-gradient(
+    250px circle at var(--x, -100px) var(--y, -100px),
+    black,
+    transparent
+  );
 }
 </style>
