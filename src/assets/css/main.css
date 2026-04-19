@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "@fontsource-variable/outfit";
 
+:root {
+  color-scheme: light;
+}
+
 body {
   font-family: "Outfit Variable", sans-serif;
 }
+

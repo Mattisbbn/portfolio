@@ -1,5 +1,6 @@
 <template>
   <div class="interactive-grid" ref="gridRef">
+    <div class="grid-bg"></div>
     <div class="grid-base"></div>
     <div class="grid-highlight"></div>
   </div>
@@ -25,12 +26,13 @@ onUnmounted(() => window.removeEventListener("mousemove", onMouseMove));
 .interactive-grid {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
 }
 
 .grid-base,
-.grid-highlight {
+.grid-highlight,
+.grid-bg {
   position: absolute;
   inset: 0;
   background-size: 20px 20px;
@@ -38,14 +40,14 @@ onUnmounted(() => window.removeEventListener("mousemove", onMouseMove));
 
 .grid-base {
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
 }
 
 .grid-highlight {
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.25) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 1px, transparent 1px);
 
   -webkit-mask-image: radial-gradient(
     250px circle at var(--x, -100px) var(--y, -100px),
@@ -53,7 +55,7 @@ onUnmounted(() => window.removeEventListener("mousemove", onMouseMove));
     transparent
   );
   mask-image: radial-gradient(
-    250px circle at var(--x, -100px) var(--y, -100px),
+    250px circle at var(--x, -499px) var(--y, -100px),
     black,
     transparent
   );
