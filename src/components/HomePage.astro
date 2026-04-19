@@ -1,38 +1,84 @@
 ---
-import HeroButton from './HeroButton.astro';
-import { Icon } from 'astro-icon/components';
-
+import HeroButton from "./HeroButton.astro";
+import ExperienceContainer from "./ExperienceContainer.vue";
+import { Icon } from "astro-icon/components";
 ---
 
 <main>
   <section id="hero" class="h-screen flex items-center justify-center flex-col">
-    <h1 class="text-5xl sm:text-7xl font-bold text-bright-gray-900 text-center">Mattis Babin</h1>
-    <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-bright-gray-900 text-center">
+    <h1 class="text-5xl sm:text-7xl font-bold text-bright-gray-900 text-center">
+      Mattis Babin
+    </h1>
+    <h2
+      class="text-2xl sm:text-3xl md:text-3xl font-bold text-bright-gray-900 text-center"
+    >
       Concepteur développeur
     </h2>
 
     <div class="flex mt-4 gap-4">
       <HeroButton href="https://github.com/Mattisbbn" name="GitHub">
-        <Icon slot="icon" name="mdi:github" class="text-4xl text-bright-gray-900" />
+        <Icon
+          slot="icon"
+          name="mdi:github"
+          class="text-4xl text-bright-gray-900"
+        />
       </HeroButton>
 
       <HeroButton href="https://www.linkedin.com/in/mattisbbn/" name="LinkedIn">
-        <Icon slot="icon" name="mdi:linkedin" class="text-4xl text-bright-gray-900" />
+        <Icon
+          slot="icon"
+          name="mdi:linkedin"
+          class="text-4xl text-bright-gray-900"
+        />
       </HeroButton>
     </div>
   </section>
 
-  <section id="about" class="h-screen flex items-center justify-center flex-col">
-    <h2 class="text-2xl sm:text-3xl md:text-3xl font-bold text-bright-gray-900 text-center">
+  <section
+    id="about"
+    class="h-screen flex items-center justify-center flex-col"
+  >
+    <h3 class="text-4xl sm:text-5xl font-bold text-bright-gray-900 text-center">
       Qui suis-je ?
-    </h2>
+    </h3>
 
-    <p class="max-w-3xl px-6 text-center whitespace-pre-line text-bright-gray-900">
-      Je m'appelle Mattis, j'ai 20 ans et je suis passionné par la programmation et l'informatique en général. Après l'obtention de mon BTS SIO, j'ai intégré un Bachelor Concepteur Développeur d'Applications que je réalise actuellement en alternance au sein de la CAF d'Ille-et-Vilaine.
-
-      Pour la suite de mon parcours, je suis à la recherche d'une nouvelle alternance de 2 ans pour préparer mon MBA Développeur Full Stack à MyDigitalSchool.
-
-      Curieux et touche-à-tout, je suis capable de gérer la création d'une application de A à Z : de la compréhension du besoin à la réalisation des schémas, en passant par la conception technique et jusqu'au déploiement final. Pour cela, je m'appuie sur une solide maîtrise des frameworks front-end (React, Vue.js) et back-end (Laravel, Symfony, Express). Motivé et sérieux, je suis toujours prêt à découvrir de nouvelles technologies et à relever de nouveaux défis.
+    <p
+      class="grid-white-trigger max-w-3xl sm:text-2xl text-xl px-6 whitespace-pre-line text-bright-gray-900 rounded-lg mt-6"
+    >
+      J'ai 20 ans et je suis passionné par la programmation et l'informatique en général. Après l'obtention de mon BTS SIO, j'ai intégré un Bachelor Concepteur Développeur d'Applications que je réalise actuellement en alternance au sein de la CAF d'Ille-et-Vilaine.
+      
+      Pour la suite de mon parcours, je suis à la recherche d'une nouvelle alternance de 2 ans pour préparer mon MBA Développeur Full Stack à MyDigitalSchool. 
+      
+      Curieux et touche-à-tout, je suis capable de gérer la création d'une application de A à Z : de la compréhension du besoin à la réalisation des schémas, en passant par la conception technique et jusqu'au déploiement final.
     </p>
+  </section>
+
+  <section
+    id="experience"
+    class="h-screen flex items-center justify-center flex-col"
+  >
+    <h3 class="text-4xl sm:text-5xl font-bold text-bright-gray-900 text-center">
+      Mon parcours
+    </h3>
+
+    <ExperienceContainer class="mt-6" client:idle />
+  </section>
+
+  <section
+    id="skills"
+    class="h-screen flex items-center justify-center flex-col"
+  >
+    <h3 class="text-4xl sm:text-5xl font-bold text-bright-gray-900 text-center">
+      Mes compétences
+    </h3>
+  </section>
+
+  <section
+    id="projects"
+    class="h-screen flex items-center justify-center flex-col"
+  >
+    <h3 class="text-4xl sm:text-5xl font-bold text-bright-gray-900 text-center">
+      Mes projets
+    </h3>
   </section>
 </main>

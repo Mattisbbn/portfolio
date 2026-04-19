@@ -8,12 +8,12 @@
     "editor.defaultFormatter": "oxc.oxc-vscode",
     "editor.formatOnSave": true
   },
-  "[astro]": {
-    "editor.defaultFormatter": "oxc.oxc-vscode",
-    "editor.formatOnSave": true
-  },
+
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar",
     "editor.formatOnSave": true
+  },
+  "[astro]": {
+    "editor.formatOnSave": false
   }
 }

@@ -3,9 +3,17 @@
 
 :root {
   color-scheme: light;
+  --grid-white-opacity: 0;
+  --grid-white-strength: 1;
+  --grid-black-opacity: 0.35;
 }
 
 body {
   font-family: "Outfit Variable", sans-serif;
 }
 
+body:has(.grid-white-trigger:hover) {
+  --grid-white-opacity: 1;
+  --grid-white-strength: 1;
+  --grid-black-opacity: 0.12;
+}

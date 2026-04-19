@@ -3,6 +3,7 @@
     <div class="grid-bg"></div>
     <div class="grid-base"></div>
     <div class="grid-highlight"></div>
+    <div class="grid-highlight-white"></div>
   </div>
 </template>
 
@@ -32,6 +33,7 @@ onUnmounted(() => window.removeEventListener("mousemove", onMouseMove));
 
 .grid-base,
 .grid-highlight,
+.grid-highlight-white,
 .grid-bg {
   position: absolute;
   inset: 0;
@@ -46,9 +48,28 @@ onUnmounted(() => window.removeEventListener("mousemove", onMouseMove));
 
 .grid-highlight {
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, var(--grid-black-opacity, 0.35)) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, var(--grid-black-opacity, 0.35)) 1px, transparent 1px);
+}
 
+.grid-highlight-white {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, var(--grid-white-strength, 1)) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, var(--grid-white-strength, 1)) 1px,
+      transparent 1px
+    );
+  opacity: var(--grid-white-opacity, 0);
+  transition: opacity 260ms ease;
+}
+
+.grid-highlight,
+.grid-highlight-white {
   -webkit-mask-image: radial-gradient(
     250px circle at var(--x, -100px) var(--y, -100px),
     black,
