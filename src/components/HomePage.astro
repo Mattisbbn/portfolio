@@ -3,6 +3,9 @@ import HeroButton from "./HeroButton.astro";
 import ExperienceContainer from "./ExperienceContainer.vue";
 import SkillPills from "./SkillPills.astro";
 import { Icon } from "astro-icon/components";
+import Image from "astro/components/Image.astro";
+
+import ovnyl from '../assets/images/ovnyl.webp';
 
 const usingLanguages = [
   { label: "PHP", icon: "devicon:php", color: "#777BB4" },
@@ -75,11 +78,15 @@ const learning = [
     <p
       class="grid-white-trigger max-w-3xl sm:text-2xl text-xl px-6 whitespace-pre-line text-bright-gray-900 rounded-lg mt-6"
     >
-      J'ai 20 ans et je suis passionné par la programmation et l'informatique en général. Après l'obtention de mon BTS SIO, j'ai intégré un Bachelor Concepteur Développeur d'Applications que je réalise actuellement en alternance au sein de la CAF d'Ille-et-Vilaine.
-      
-      Pour la suite de mon parcours, je suis à la recherche d'une nouvelle alternance de 2 ans pour préparer mon MBA Développeur Full Stack à MyDigitalSchool. 
-      
-      Curieux et touche-à-tout, je suis capable de gérer la création d'une application de A à Z : de la compréhension du besoin à la réalisation des schémas, en passant par la conception technique et jusqu'au déploiement final.
+      J'ai 20 ans et je suis passionné par la programmation et l'informatique en
+      général. Après l'obtention de mon BTS SIO, j'ai intégré un Bachelor
+      Concepteur Développeur d'Applications que je réalise actuellement en
+      alternance au sein de la CAF d'Ille-et-Vilaine. Pour la suite de mon
+      parcours, je suis à la recherche d'une nouvelle alternance de 2 ans pour
+      préparer mon MBA Développeur Full Stack à MyDigitalSchool. Curieux et
+      touche-à-tout, je suis capable de gérer la création d'une application de A
+      à Z : de la compréhension du besoin à la réalisation des schémas, en
+      passant par la conception technique et jusqu'au déploiement final.
     </p>
   </section>
 
@@ -103,44 +110,60 @@ const learning = [
     </h3>
 
     <div class="mt-8 flex flex-col gap-4">
-      <h4 class="text-3xl font-bold text-gray-800 underline mb-4 ">
+      <h4 class="text-3xl font-bold text-gray-800 underline mb-4">
         J'utilise :
       </h4>
 
-      <h5 class="text-2xl font-bold text-gray-800 ">Langages</h5>
+      <h5 class="text-2xl font-bold text-gray-800">Langages</h5>
       <div class="flex flex-row flex-wrap gap-4">
         {
           usingLanguages.map((skill) => (
-            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+            <SkillPills
+              label={skill.label}
+              icon={skill.icon}
+              color={skill.color}
+            />
           ))
         }
       </div>
 
-      <h5 class="text-2xl font-bold text-gray-800 ">Frameworks</h5>
+      <h5 class="text-2xl font-bold text-gray-800">Frameworks</h5>
       <div class="flex flex-row flex-wrap gap-4">
         {
           usingFrameworks.map((skill) => (
-            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+            <SkillPills
+              label={skill.label}
+              icon={skill.icon}
+              color={skill.color}
+            />
           ))
         }
       </div>
 
-      <h5 class="text-2xl font-bold text-gray-800 ">Autres</h5>
+      <h5 class="text-2xl font-bold text-gray-800">Autres</h5>
       <div class="flex flex-row flex-wrap gap-4">
         {
           usingOthers.map((skill) => (
-            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+            <SkillPills
+              label={skill.label}
+              icon={skill.icon}
+              color={skill.color}
+            />
           ))
         }
       </div>
 
-      <h5 class="text-3xl font-bold text-gray-800 underline my-4 ">
+      <h5 class="text-3xl font-bold text-gray-800 underline my-4">
         J'apprends :
       </h5>
       <div class="flex flex-row flex-wrap gap-4">
         {
           learning.map((skill) => (
-            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+            <SkillPills
+              label={skill.label}
+              icon={skill.icon}
+              color={skill.color}
+            />
           ))
         }
       </div>
@@ -154,7 +177,39 @@ const learning = [
     <h3 class="text-4xl sm:text-5xl font-bold text-bright-gray-900 text-center">
       Mes projets
     </h3>
+
+    <div
+      class="project-card flex flex-col self-start w-105 rounded-xl overflow-hidden bg-white shadow-lg"
+    >
+     <Image src={ovnyl} alt="Interface du site Click & Eat, application web de commande de repas développée par Mattis Babin" />
+      <div class="p-4">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">OVnyl</h3>
+        <p class="text-gray-600 line-clamp-3 project-description">
+          <b>Introduction :</b> Le projet Ovnyl avait pour but de concevoir une refonte
+          complète d’un site e-commerce existant, en améliorant à la fois la sécurité,
+          la maintenabilité et l’expérience utilisateur. L’objectif était de moderniser
+          un site initialement développé en PHP 5 avec de nombreuses dépendances dépréciées
+          et vulnérables, afin de le rendre plus stable et plus facile à maintenir.
+          <br /><br />
+          <b>Contexte :</b> Ce projet a été réalisé dans le cadre de mon alternance
+          chez Akoufen, pour un client réel possédant un site e-commerce. Le client
+          souhaitait initialement uniquement une refonte graphique, mais j’ai proposé
+          et mis en place une refonte complète du site, afin de renforcer la sécurité
+          et la maintenabilité, tout en conservant une stack technique simple et adaptée
+          à l’environnement de travail de l’équipe. <br /><br />
+          <b>Technologies utilisées :</b> PHP, MySQL, Bootstrap, JavaScript, Git
+        </p>
+        <button
+          class="mt-2 bg-primary text-white px-3 py-1 rounded-full expand-project-button cursor-pointer"
+          >En savoir plus 
+          
+          <Icon name="fa:external-link" class="inline w-4 h-4 ms-1" />
+          
+          
+          </button
+        >
+          <Icon name="fa:external-link" class="inline w-4 h-4 ms-1" />
+      </div>
+    </div>
   </section>
-
-
 </main>
