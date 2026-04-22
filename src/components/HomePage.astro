@@ -1,7 +1,37 @@
 ---
 import HeroButton from "./HeroButton.astro";
 import ExperienceContainer from "./ExperienceContainer.vue";
+import SkillPills from "./SkillPills.astro";
 import { Icon } from "astro-icon/components";
+
+const usingLanguages = [
+  { label: "PHP", icon: "devicon:php", color: "#777BB4" },
+  { label: "JavaScript", icon: "devicon:javascript", color: "#F7DF1E" },
+  { label: "SQL", icon: "devicon:azuresqldatabase", color: "#4479A1" },
+];
+
+const usingFrameworks = [
+  { label: "Symfony", icon: "devicon:symfony", color: "#000000" },
+  { label: "Laravel", icon: "devicon:laravel", color: "#FF2D20" },
+  { label: "React", icon: "devicon:react", color: "#61DAFB" },
+  { label: "Vue.js", icon: "devicon:vuejs", color: "#42B883" },
+  { label: "Quasar", icon: "devicon:quasar", color: "#16B7FB" },
+  { label: "Astro", icon: "devicon:astro", color: "#FF5D01" },
+  { label: "TailwindCSS", icon: "devicon:tailwindcss", color: "#38BDF8" },
+];
+
+const usingOthers = [
+  { label: "Debian", icon: "devicon:debian", color: "#A81D33" },
+  { label: "Nginx", icon: "devicon:nginx", color: "#269539" },
+  { label: "GitHub", icon: "devicon:github", color: "#181717" },
+  { label: "Git", icon: "devicon:git", color: "#F34F29" },
+  { label: "Docker", icon: "devicon:docker", color: "#2496ED" },
+];
+
+const learning = [
+  { label: "Flutter", icon: "devicon:flutter", color: "#47C5FB" },
+  { label: "Java", icon: "devicon:java", color: "#EA2D2E" },
+];
 ---
 
 <main>
@@ -71,6 +101,50 @@ import { Icon } from "astro-icon/components";
     <h3 class="text-4xl sm:text-5xl font-bold text-bright-gray-900 text-center">
       Mes compétences
     </h3>
+
+    <div class="mt-8 flex flex-col gap-4">
+      <h4 class="text-3xl font-bold text-gray-800 underline mb-4 ">
+        J'utilise :
+      </h4>
+
+      <h5 class="text-2xl font-bold text-gray-800 ">Langages</h5>
+      <div class="flex flex-row flex-wrap gap-4">
+        {
+          usingLanguages.map((skill) => (
+            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+          ))
+        }
+      </div>
+
+      <h5 class="text-2xl font-bold text-gray-800 ">Frameworks</h5>
+      <div class="flex flex-row flex-wrap gap-4">
+        {
+          usingFrameworks.map((skill) => (
+            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+          ))
+        }
+      </div>
+
+      <h5 class="text-2xl font-bold text-gray-800 ">Autres</h5>
+      <div class="flex flex-row flex-wrap gap-4">
+        {
+          usingOthers.map((skill) => (
+            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+          ))
+        }
+      </div>
+
+      <h5 class="text-3xl font-bold text-gray-800 underline my-4 ">
+        J'apprends :
+      </h5>
+      <div class="flex flex-row flex-wrap gap-4">
+        {
+          learning.map((skill) => (
+            <SkillPills label={skill.label} icon={skill.icon} color={skill.color} />
+          ))
+        }
+      </div>
+    </div>
   </section>
 
   <section
@@ -81,4 +155,6 @@ import { Icon } from "astro-icon/components";
       Mes projets
     </h3>
   </section>
+
+
 </main>

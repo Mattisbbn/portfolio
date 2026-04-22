@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { Icon } from '@iconify/vue';
+
 import ExperienceButton from './ExperienceButton.vue';
 import Timeline from './Timeline.vue';
 
