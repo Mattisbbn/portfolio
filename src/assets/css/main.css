@@ -8,6 +8,13 @@
   --grid-black-opacity: 0.35;
 }
 
+@theme {
+  --color-primary: #6A63F1;
+}
+
+
+
+
 body {
   font-family: "Outfit Variable", sans-serif;
 }
