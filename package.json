@@ -11,8 +11,8 @@
     "fmt:check": "oxfmt --check"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
-    "@astrojs/react": "^5.0.3",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/react": "^5.0.4",
     "@astrojs/vue": "^6.0.1",
     "@fontsource-variable/outfit": "^5.2.8",
     "@iconify-json/mdi": "^1.2.3",
@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.6",
+    "astro": "^6.2.2",
     "astro-icon": "^1.1.5",
     "magicmouse.js": "^2.0.0",
     "react": "^19.2.5",
